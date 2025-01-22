@@ -9,8 +9,7 @@
 #if ARCH_ARM64
 #include "arm_intrinsics_sub.h"
 #else
-#include <xmmintrin.h>
-#include <mmintrin.h>
+#include "simde/x86/sse2.h"
 #endif
 
 #define _LLOOK

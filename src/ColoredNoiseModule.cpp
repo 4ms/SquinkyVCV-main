@@ -159,7 +159,7 @@ struct ColorDisplay : TransparentWidget
     Label* _slopeLabel;
     Label* _signLabel;
    
-    void draw(NVGcontext *vg) override
+    void draw(NVGcontext *vg)
     {
         nvgGlobalTint(vg, color::WHITE);
         // First draw the solid fill

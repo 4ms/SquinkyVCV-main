@@ -1125,9 +1125,9 @@ bool closeTo(double x, double y, double tolerance) {
 }
 
 void fillStageOneRoot_notNormalized(double * taps, Complex root) {
-	if (!closeTo(root.imag(), 0, smallNumber)) {
-		throw std::runtime_error("unmatched complex root");
-	}
+	// if (!closeTo(root.imag(), 0, smallNumber)) {
+	// 	throw std::runtime_error("unmatched complex root");
+	// }
 
 
 	/*  h(z) = root - (z**-1)
@@ -1160,8 +1160,8 @@ void fillStageTwoRoots_notNormalized(double * taps, Complex root1, Complex root2
 	}
 	else if ( areConjugates(root1, root2)) {
 	}
-	else
-		throw std::runtime_error("unmatched complex roots");
+	// else
+	// 	throw std::runtime_error("unmatched complex roots");
 
 
 	//  h(z) = root - z  ;will be zero when z == root
@@ -1217,7 +1217,7 @@ int locateMatchingRoot(Roots& roots, int indexThatNeedsMatch, int indexMatchDest
 			return i;
 		}
 	}
-	throw std::runtime_error("unmatched complex roots c");
+	return -1;
 }
 
 void pairRoots2(Roots& roots) {
@@ -1237,7 +1237,7 @@ void pairRoots2(Roots& roots) {
 			}
 			else if (i >= (num-1)) {
 				// if no more to pair with, we are hosed
-				throw std::runtime_error("unmatched complex roots b");
+				// throw std::runtime_error("unmatched complex roots b");
 			}
 			else if (areConjugates(root, roots.GetNth(i + 1)) ){
 				// if next root already a match, we are cool
@@ -1329,7 +1329,7 @@ void Layout::Realize_custom( Cascade *cascade )
 
 	int sz = (zeros +1)/2;
 	if (stages != sz) {
-			throw std::runtime_error("realize with mismatched stage count");
+			// throw std::runtime_error("realize with mismatched stage count");
 	}
 	cascade->SetStageCount( stages );
 	
@@ -2486,7 +2486,7 @@ void RootFinder::laguerre( int degree, Complex a[], Complex &x, int &its)
 		else x -= frac[iter/MT]*dx;
 	}
 
-	throw;
+	// throw;
 }
 
 //------------------------------------------------------------------------------

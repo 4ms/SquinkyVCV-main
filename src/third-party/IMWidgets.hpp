@@ -52,7 +52,7 @@ struct DynamicSVGScrew : FramebufferWidget {
 
 struct PanelBorderWidget : TransparentWidget { // from SVGPanel.cpp
 	int** expWidth = nullptr;
-	void draw(NVGcontext *vg) override;
+	void draw(NVGcontext *vg);
 };
 
 

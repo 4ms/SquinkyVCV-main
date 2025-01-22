@@ -10,7 +10,7 @@
 #if ARCH_ARM64
 #include "arm_intrinsics_sub.h"
 #else
-#include <emmintrin.h>
+#include <simde/x86/sse2.h>
 #endif
 #include <functional>
 
@@ -187,15 +187,13 @@ inline void LookupTable<T>::initDiscrete(LookupTableParams<T>& params, int numEn
 template<>
 inline int LookupTable<double>::cvtt(double* input)
 {
-    auto x = _mm_load_sd(input);
-    return _mm_cvttsd_si32(x);
+    return static_cast<int>(*input);
 }
 
 template<>
 inline int LookupTable<float>::cvtt(float* input)
 {
-    auto x = _mm_load_ss(input);
-    return _mm_cvttss_si32(x);
+    return static_cast<int>(*input);
 }
 
 /***************************************************************************/
