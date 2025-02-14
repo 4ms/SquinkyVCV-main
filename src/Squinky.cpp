@@ -123,7 +123,9 @@ p->addModel(modelSubModule);
 #ifdef _SINES
 p->addModel(modelSinesModule);
 #endif
+#ifdef _BASIC
 p->addModel(modelBasicModule);
+#endif
 #ifdef  _DIVR
 p->addModel(modelDividerXModule);
 #endif
@@ -134,7 +136,9 @@ p->addModel(modelF2Module);
 #ifdef _F4
 p->addModel(modelF4Module);
 #endif
+#ifdef _COMP
 p->addModel(modelCompressorModule);
+#endif
 
 #ifdef _COMP2
 p->addModel(modelCompressor2Module);

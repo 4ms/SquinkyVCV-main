@@ -2,10 +2,13 @@
 #include "rack.hpp"
 // #define _TIME_DRAWING
 
+#ifndef METAMODULE
+// Let Metamodule cmake define what is built
+
 #define _XFORM
 #define _CH10
 
-#define _FUN        // works with 1.0
+#define _FUN // works with 1.0
 
 #define _LFN
 #define _FORMANTS
@@ -28,7 +31,6 @@
 #define _SAMP
 #define _F2
 
-
 #define _MIXM
 #define _DTMODULE
 
@@ -38,6 +40,10 @@
 #define _COMP2
 #define _LFNB
 #define _BLANKMODULE
+
+#define _BASIC
+#define _COMP
+#endif
 
 using namespace ::rack;
 
@@ -61,13 +67,13 @@ extern Model *modelCompressorModule;
 extern Model *modelCompressor2Module;
 #endif
 #ifdef _F4
-    extern Model *modelF4Module;
+extern Model *modelF4Module;
 #endif
 #ifdef _FORMANTS
-    extern Model *modelVocalFilterModule;
+extern Model *modelVocalFilterModule;
 #endif
 #ifdef _GROWLER
-    extern Model *modelVocalModule;
+extern Model *modelVocalModule;
 #endif
 #ifdef _GMR
 extern Model *modelGMRModule;
@@ -125,16 +131,16 @@ extern Model *modelMix4Module;
 extern Model *modelMixMModule;
 #endif
 #ifdef _MIX_STEREO
-extern Model* modelMixStereoModule;
+extern Model *modelMixStereoModule;
 #endif
 #ifdef _FILT
 extern Model *modelFiltModule;
 #endif
 #ifdef _DTMODULE
-extern Model* modelDrumTriggerModule;
+extern Model *modelDrumTriggerModule;
 #endif
 #ifdef _CHAOS
-extern Model* modelChaosKittyModule;
+extern Model *modelChaosKittyModule;
 #endif
 #ifdef _WVCO
 extern Model *modelWVCOModule;
@@ -146,16 +152,14 @@ extern Model *modelSubModule;
 extern Model *modelSinesModule;
 #endif
 extern Model *modelBasicModule;
-#ifdef  _DIVR
+#ifdef _DIVR
 extern Model *modelDividerXModule;
 #endif
 
-#ifdef  _SAMP
+#ifdef _SAMP
 extern Model *modelSampModule;
 #endif
 
-
-#ifdef  _TESTM
+#ifdef _TESTM
 extern Model *modelTestModule;
 #endif
-
